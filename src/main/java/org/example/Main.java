@@ -80,7 +80,7 @@ class Main {
 //
 //        //
 //        //
-        int age = 10;
+        int age = 10; 
 
         // v1
         if ( age < 10 ) { System.out.println("아동/영유아"); }
