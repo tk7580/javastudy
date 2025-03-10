@@ -1,27 +1,27 @@
 package org.example;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int a = 10;
 
-        int[] arr = new int[4];
+        Scanner sc = new Scanner(System.in);
 
-        for(int i = 0; i<arr.length; i++){
-            arr[i] = (i + 1) * 10;
-        }
+        int a; //정수만 넣음
 
-        int sum = 0;
+        MyObject  obj = new MyObject(); //MyObject모양의 객체랑 연결될 obj
+        obj.b = "안녕";
+        System.out.println(obj.b);
+        System.out.println(obj.b);
+        System.out.println(obj.b);
 
-        for(int i = 0; i < arr.length; i++){
-            sum += arr[i];
-        }
-
-        int avg =sum / arr.length;
-
-        System.out.printf("총합 : %d\n", sum);
-
-        System.out.println("평균 : " + avg);
+        new MyObject().a = 10;
+        System.out.println(new MyObject().a);
     }
+}
+
+class MyObject{
+    int a;
+    String b;
+    double c;
 }
