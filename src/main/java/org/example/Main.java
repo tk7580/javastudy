@@ -5,23 +5,27 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        사람 a = new 사람();
 
-        int a; //정수만 넣음
+        System.out.println(a.age);
+        System.out.println(a.name);
+        System.out.println(a.isMarried);
 
-        MyObject  obj = new MyObject(); //MyObject모양의 객체랑 연결될 obj
-        obj.b = "안녕";
-        System.out.println(obj.b);
-        System.out.println(obj.b);
-        System.out.println(obj.b);
+        사람 b = new 사람();
+        b.name = "박영수";
 
-        new MyObject().a = 10;
-        System.out.println(new MyObject().a);
+        System.out.println(a.age);
+        System.out.println(a.name);
+        System.out.println(a.isMarried);
     }
 }
 
-class MyObject{
-    int a;
-    String b;
-    double c;
+class 사람{
+    int age;
+    String name;
+    boolean isMarried = true;
+
+    void hello(){
+        System.out.println(123);
+    }
 }
