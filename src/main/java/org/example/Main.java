@@ -4,33 +4,61 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        //계산기.합();
+        boolean result = Math.isPrimeNumber(1);
+        System.out.println("1은(는) 소수인가? : " + result);
 
-        계산기.합( 10, 20); //출력 : 30
+        result = Math.isPrimeNumber(2);
+        System.out.println("2은(는) 소수인가? : " + result);
 
-        계산기.합( 30, 40); //출력 : 70
-        계산기.합( 40, 30); //출력 : 70
+        result = Math.isPrimeNumber(3);
+        System.out.println("3은(는) 소수인가? : " + result);
 
-//        계산기.합(10, true);
-//        계산기.합(10, 40, 100);
-//        계산기.합(0);
+        result = Math.isPrimeNumber(4);
+        System.out.println("4은(는) 소수인가? : " + result);
 
-        계산기.합(0);
+        int rs = one_to_n_prime_numbers_count(10);
+        System.out.println("rs : " + rs);
+        // rs : 4
+        rs = one_to_n_prime_numbers_count(13);
+        System.out.println("rs : " + rs);
+        // rs :  6
+
+        rs = Math.n_to_m_prime_numbers_sum(5, 11);
+        System.out.println("5부터 11까지 소수 합 : " + rs);
+    }
+
+    static int one_to_n_prime_numbers_count(int n){
+        int count = 0;
+        for(int i = 1; i<= n; i++){
+            if(Math.isPrimeNumber(i)) {
+                System.out.println(i);
+                count++;
+            }
+        }
+        return count;
     }
 }
-
-class 계산기 {
-
-    static void 합(int c){
-        int a = 10;
-        int b = 20;
-        System.out.println(a + b);
+class Math {
+    static int n_to_m_prime_numbers_sum(int n, int m){
+        int sum = 0;
+        for(int i = n; i <= m; i++){
+            if(Math.isPrimeNumber(i)){
+                System.out.println(i);
+                sum += i;
+            }
+        }
+        return sum;
     }
-
-    static void 합(int a, int b){
-        System.out.println("a : " + a);
-        System.out.println("b : " + b);
-
-        System.out.println(a+b);
+    static boolean isPrimeNumber(int num){
+        if(num == 1){
+            return false;
+        }
+        int sum = 0;
+        for(int i = 1; i <= num; i++){
+            if(num %  i == 0){
+                sum += i;
+            }
+        }
+        return sum == num + 1;
     }
 }
