@@ -1,64 +1,77 @@
 package org.example;
+import org.w3c.dom.ls.LSOutput;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        boolean result = Math.isPrimeNumber(1);
-        System.out.println("1은(는) 소수인가? : " + result);
+        샤오미Tv a샤오미Tv = new 샤오미Tv();
+        삼성Tv a삼성Tv = new 삼성Tv();
+        LGTv aLGTv = new LGTv();
 
-        result = Math.isPrimeNumber(2);
-        System.out.println("2은(는) 소수인가? : " + result);
+        a샤오미Tv.켜기();
+        // 출력 => 샤오미Tv 켜집니다.
+        a샤오미Tv.끄기();
+        // 출력 => 샤오미Tv 꺼집니다.
+        a샤오미Tv.vr켜기();
+        // 출력 => 샤오미Tv vr켜기!
 
-        result = Math.isPrimeNumber(3);
-        System.out.println("3은(는) 소수인가? : " + result);
+        a삼성Tv.켜기();
+        // 출력 => 삼성Tv 켜집니다.
+        a삼성Tv.끄기();
+        // 출력 => 삼성Tv 꺼집니다.
+        a삼성Tv.ar켜기();
+        // 출력 => 삼성Tv ar켜기!
 
-        result = Math.isPrimeNumber(4);
-        System.out.println("4은(는) 소수인가? : " + result);
-
-        int rs = one_to_n_prime_numbers_count(10);
-        System.out.println("rs : " + rs);
-        // rs : 4
-        rs = one_to_n_prime_numbers_count(13);
-        System.out.println("rs : " + rs);
-        // rs :  6
-
-        rs = Math.n_to_m_prime_numbers_sum(5, 11);
-        System.out.println("5부터 11까지 소수 합 : " + rs);
-    }
-
-    static int one_to_n_prime_numbers_count(int n){
-        int count = 0;
-        for(int i = 1; i<= n; i++){
-            if(Math.isPrimeNumber(i)) {
-                System.out.println(i);
-                count++;
-            }
-        }
-        return count;
+        aLGTv.켜기();
+        // 출력 => LGTv 켜집니다.
+        aLGTv.끄기();
+        // 출력 => LGTv 꺼집니다.
+        aLGTv.게임모드전환();
+        // 출력 => LGTv 게임모드전환!
     }
 }
-class Math {
-    static int n_to_m_prime_numbers_sum(int n, int m){
-        int sum = 0;
-        for(int i = n; i <= m; i++){
-            if(Math.isPrimeNumber(i)){
-                System.out.println(i);
-                sum += i;
-            }
-        }
-        return sum;
+
+class Tv {
+    public void 켜기(){
+        System.out.println("켜집니다.");
     }
-    static boolean isPrimeNumber(int num){
-        if(num == 1){
-            return false;
-        }
-        int sum = 0;
-        for(int i = 1; i <= num; i++){
-            if(num %  i == 0){
-                sum += i;
-            }
-        }
-        return sum == num + 1;
+    public void 끄기(){
+        System.out.println("꺼집니다.");
+    }
+}
+class 샤오미Tv extends Tv{
+    @Override
+    public void 켜기() {
+        System.out.println("샤오미Tv 켜집니다.");
+    }
+    public void 끄기(){
+        System.out.println("샤오미Tv 꺼집니다.");
+    }
+    public void vr켜기(){
+        System.out.println("샤오미Tv vr켜기!");
+    }
+}
+class 삼성Tv extends Tv{
+    public void 켜기() {
+        System.out.println("삼성Tv 켜집니다.");
+    }
+    public void 끄기(){
+        System.out.println("삼성Tv 꺼집니다.");
+    }
+    public void ar켜기(){
+        System.out.println("삼성Tv ar켜기!");
+    }
+}
+class LGTv extends Tv{
+    public void 켜기() {
+        System.out.println("LGTv 켜집니다.");
+    }
+    public void 끄기(){
+        System.out.println("LGTv 꺼집니다.");
+    }
+    public void 게임모드전환(){
+        System.out.println("LGTv 게임모드전환!");
     }
 }
