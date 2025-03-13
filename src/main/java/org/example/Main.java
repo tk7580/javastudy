@@ -6,72 +6,57 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        샤오미Tv a샤오미Tv = new 샤오미Tv();
-        삼성Tv a삼성Tv = new 삼성Tv();
-        LGTv aLGTv = new LGTv();
-
-        a샤오미Tv.켜기();
-        // 출력 => 샤오미Tv 켜집니다.
-        a샤오미Tv.끄기();
-        // 출력 => 샤오미Tv 꺼집니다.
-        a샤오미Tv.vr켜기();
-        // 출력 => 샤오미Tv vr켜기!
-
-        a삼성Tv.켜기();
-        // 출력 => 삼성Tv 켜집니다.
-        a삼성Tv.끄기();
-        // 출력 => 삼성Tv 꺼집니다.
-        a삼성Tv.ar켜기();
-        // 출력 => 삼성Tv ar켜기!
-
-        aLGTv.켜기();
-        // 출력 => LGTv 켜집니다.
-        aLGTv.끄기();
-        // 출력 => LGTv 꺼집니다.
-        aLGTv.게임모드전환();
-        // 출력 => LGTv 게임모드전환!
+        int i = 로봇.get정수();
+        boolean b = 로봇.get논리();
+        사람 a사람 = 로봇.get사람();
+        사람 a사람2 = 로봇.get사람2();
+        사람 a사람3 = 로봇.get사람3();
+        사람 a사람4 = 로봇.get사람4();
+        사람 a사람5 = 로봇.get사람5(123, false);
+        로봇.get사람6(123, false);
     }
 }
 
-class Tv {
-    public void 켜기(){
-        System.out.println("켜집니다.");
+class 로봇{
+    static void get사람6(int 학번, boolean 출결){
+
     }
-    public void 끄기(){
-        System.out.println("꺼집니다.");
+
+    static 사람 get사람5(int 학번, boolean 출결){
+        사람 a사람 = new 사람();
+        a사람.학번 = 학번;
+        a사람.출결 = 출결;
+        return a사람;
+    }
+
+    static 사람 get사람4(){
+        사람 a사람 = new 사람();
+        return a사람;
+    }
+
+    static 사람 get사람3(){
+        사람 a사람 = null;
+        return a사람;
+    }
+
+    static 사람 get사람2(){
+        return new 사람();
+    }
+
+    static 사람 get사람(){
+        return null;
+    }
+
+    static int get정수(){
+        return 0;
+    }
+
+    static boolean get논리(){
+        return true;
     }
 }
-class 샤오미Tv extends Tv{
-    @Override
-    public void 켜기() {
-        System.out.println("샤오미Tv 켜집니다.");
-    }
-    public void 끄기(){
-        System.out.println("샤오미Tv 꺼집니다.");
-    }
-    public void vr켜기(){
-        System.out.println("샤오미Tv vr켜기!");
-    }
-}
-class 삼성Tv extends Tv{
-    public void 켜기() {
-        System.out.println("삼성Tv 켜집니다.");
-    }
-    public void 끄기(){
-        System.out.println("삼성Tv 꺼집니다.");
-    }
-    public void ar켜기(){
-        System.out.println("삼성Tv ar켜기!");
-    }
-}
-class LGTv extends Tv{
-    public void 켜기() {
-        System.out.println("LGTv 켜집니다.");
-    }
-    public void 끄기(){
-        System.out.println("LGTv 꺼집니다.");
-    }
-    public void 게임모드전환(){
-        System.out.println("LGTv 게임모드전환!");
-    }
+
+class 사람{
+    int 학번;
+    boolean 출결;
 }
