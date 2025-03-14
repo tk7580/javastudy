@@ -1,62 +1,97 @@
 package org.example;
 import org.w3c.dom.ls.LSOutput;
-
+import java.util.ArrayList;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
-        int i = 로봇.get정수();
-        boolean b = 로봇.get논리();
-        사람 a사람 = 로봇.get사람();
-        사람 a사람2 = 로봇.get사람2();
-        사람 a사람3 = 로봇.get사람3();
-        사람 a사람4 = 로봇.get사람4();
-        사람 a사람5 = 로봇.get사람5(123, false);
-        로봇.get사람6(123, false);
+        v4();
+    }
+
+    static void v4() {
+        System.out.println("==v4==");
+        List
+                articles = new ArrayList<>();
+        articles.add(new Article()); // index : 0 , id : 1
+        articles.add(new Article()); // index : 1 , id : 2
+        articles.add(new Article()); // index : 2 , id : 3
+
+        for (int i = 0; i < articles.size(); i++) {
+            Article article = articles.get(i);
+            System.out.println(article.id);
+        }
+    }
+
+    static void v3() {
+        System.out.println("==v3==");
+        ArrayList
+                articles = new ArrayList<>();
+        articles.add(new Article()); // index : 0 , id : 1
+        articles.add(new Article()); // index : 1 , id : 2
+        articles.add(new Article()); // index : 2 , id : 3
+        articles.add(new Article()); // index : 3 , id : 4
+
+        for (int i = 0; i < articles.size(); i++) {
+            Article article = articles.get(i);
+            System.out.println(article.id);
+        }
+    }
+
+    static void v2() {
+        System.out.println("==v2==");
+        ArrayList articles = new ArrayList();
+        articles.add(new Article()); // index : 0 , id : 1
+        articles.add(new Article()); // index : 1 , id : 2
+        articles.add(new Article()); // index : 2 , id : 3
+        articles.add(new Article()); // index : 3 , id : 4
+
+        for (int i = 0; i < articles.size(); i++) {
+            Article article = (Article) articles.get(i);
+            System.out.println(article.id);
+        }
+    }
+
+    static void v1() {
+        System.out.println("==v1==");
+        Article[] articles = new Article[100];
+
+        int articlesSize = 0;
+
+        articles[0] = new Article();
+        articlesSize++;
+        articles[1] = new Article();
+        articlesSize++;
+        articles[2] = new Article();
+        articlesSize++;
+        articles[3] = new Article();
+        articlesSize++;
+        articles[4] = new Article();
+        articlesSize++;
+
+        for (int i = 0; i < articlesSize; i++) {
+            System.out.println(articles[i].id);
+        }
     }
 }
 
-class 로봇{
-    static void get사람6(int 학번, boolean 출결){
+class Article {
+    static int lastId;
 
+    int id;
+    String regDate;
+
+    static {
+        lastId = 0;
     }
 
-    static 사람 get사람5(int 학번, boolean 출결){
-        사람 a사람 = new 사람();
-        a사람.학번 = 학번;
-        a사람.출결 = 출결;
-        return a사람;
+    Article() {
+        this(lastId + 1, "2025-12-12 12:12:12"); // 다른 생성자 호출(실행), Constructor Call
+        lastId++;
     }
 
-    static 사람 get사람4(){
-        사람 a사람 = new 사람();
-        return a사람;
+    Article(int id, String regDate) {
+        this.id = id;
+        this.regDate = regDate;
     }
-
-    static 사람 get사람3(){
-        사람 a사람 = null;
-        return a사람;
-    }
-
-    static 사람 get사람2(){
-        return new 사람();
-    }
-
-    static 사람 get사람(){
-        return null;
-    }
-
-    static int get정수(){
-        return 0;
-    }
-
-    static boolean get논리(){
-        return true;
-    }
-}
-
-class 사람{
-    int 학번;
-    boolean 출결;
 }
